@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import UserForm from './components/UserForm';
+import UserList from './components/UserList';
+import PostForm from './components/PostForm';
+import PostList from './components/PostList';
+import CommentForm from './components/CommentForm';
+import CommentList from './components/CommentList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    // Replace these with actual IDs from your backend
+    const userId = 'user_id_example';
+    const postId = 'post_id_example';
+
+    return (
+        <div className="App">
+            <h1>GOQii Full Stack Test</h1>
+            <UserForm />
+            <UserList />
+            <PostForm userId={userId} />
+            <PostList />
+            <CommentForm userId={userId} postId={postId} />
+            <CommentList />
+        </div>
+    );
+};
 
 export default App;
